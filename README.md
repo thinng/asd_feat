@@ -6,12 +6,14 @@ A. Resources:
 - source codes:
 + conventional_feature_ranking.py: 12 conventional feature ranking methods plus AUC (baseline) and SFARI.
 + gene_interaction_co_expression.py: create co-expression networks.
-+ gene_interaction_pathway.py: create pathway networks.
++ gene_interaction_pathway.py: create pathway networks ('DO', 'GObp','GOcc', 'GOmf', and 'HPO' networks).
 + gene_interaction_PPI.py: create PPI networks.
 + gene_interaction_pubmed.py: create pubmed-embedding networks.
 + gene_embedding.py: create word, hence gene name included, embedding, used as input for gene_interaction_pubmed.py
++ gene_interaction_joint.py: create a ensembling network where an edge is defined between two genes if it is existed in more than half of all the 8 networks ('co_expression','DO', 'GObp','GOcc', 'GOmf', 'HPO','PPI', and 'pubmed').
 + geneRank.m: score genes based on their networks: co-expression, pathway, PPI, and pubmed-embedding networks
 + score_2_index.py: turn the score returned by geneRank.m into the index of genes in the datasets. 
++ python classify.py: running the classification task with the features ranked highest by the above methods, be it conventional or network-based.
 
 - folder pubmed/: 
 + pubmed.txt (unzip pubmed.7z): contain PubMed raw text as input to learn word/gene embeddings.
@@ -83,7 +85,7 @@ python score_2_index.py
 
 The ranking of genes returned by running score_2_index.py will be stored at the folder of feat_ranking/
 
-4. Now we have feature ranking for both conventional and network-based methods. 
+4. Now we have feature ranking for both conventional and network-based methods. Then the features with highest ranks will be used in the following classification. 
 python classify.py
 
 The result for all these feature selections returned by running classify.py will be stored in result.csv.
