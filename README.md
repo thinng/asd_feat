@@ -1,5 +1,5 @@
 A. Resources:
-- README.txt: this file.
+- README.md: this file.
 - GSE18123GPL570.csv and GSE18123GPL6244.csv: two datasets
 - result.csv: result for each method with different number of features. Measured by accuracy, auc, f1, and	mcc.
 
