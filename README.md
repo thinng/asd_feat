@@ -39,10 +39,11 @@ pip install gensim
 
 1. Running conventional feature ranking:
 python conventional_feature_ranking.py index
-# where index is in the range of the list of conventional methods ['chi_square','cmim', 'f_score','fisher_score','gini_index','icap','jmi','ll_l21','ls_l21','reliefF','rfs','trace_ratio', 'SFARI','AUC']
-# The material for SFARI is stored at /home/thinng/code/2019/bib/mapping/SFARI-Gene_genes_export09-06-2018.csv, 
-# downloaded from https://gene.sfari.org//wp-content/themes/sfari-gene/utilities/download-csv.php?api-endpoint=genes
-# The ranking of genes will be stored at the folder of feat_ranking/
+
+where index is in the range of the list of conventional methods ['chi_square','cmim', 'f_score','fisher_score','gini_index','icap','jmi','ll_l21','ls_l21','reliefF','rfs','trace_ratio', 'SFARI','AUC']
+The material for SFARI is stored at /home/thinng/code/2019/bib/mapping/SFARI-Gene_genes_export09-06-2018.csv, 
+downloaded from https://gene.sfari.org//wp-content/themes/sfari-gene/utilities/download-csv.php?api-endpoint=genes
+The ranking of genes will be stored at the folder of feat_ranking/
 
 2. Building gene-gene networks:
 
@@ -51,33 +52,39 @@ python gene_interaction_co_expression.py
 
 - pathway interactions:
 python gene_interaction_pathway.py
-# The mapping of gene-ontologies is stored at mapping/hgncTo*.csv. There are five ontologies: 'DO', 'GObp','GOcc', 'GOmf', and 'HPO'.
+
+The mapping of gene-ontologies is stored at mapping/hgncTo*.csv. There are five ontologies: 'DO', 'GObp','GOcc', 'GOmf', and 'HPO'.
 
 - PPI networks:
 python gene_interaction_PPI.py
-# The material for building PPI is stored at mapping/hippie_current.txt, downloaded from http://cbdm-01.zdv.uni-mainz.de/~mschaefer/hippie/hippie_current.txt
+
+The material for building PPI is stored at mapping/hippie_current.txt, downloaded from http://cbdm-01.zdv.uni-mainz.de/~mschaefer/hippie/hippie_current.txt
 
 - PubMed based networks:
-# For learning gene-gene interactions from PubMed, first the embedding for genes should be learned by running:
+For learning gene-gene interactions from PubMed, first the embedding for genes should be learned by running:
 python gene_embedding.py
-# Raw data extracted from PubMed is stored at /pubmed/pubmed.txt. The embbed model is stored at pubmed/gene_embedding.embed.
-# Then the network is learned through:
+
+Raw data extracted from PubMed is stored at /pubmed/pubmed.txt. The embbed model is stored at pubmed/gene_embedding.embed.
+Then the network is learned through:
 python gene_interaction_pubmed.py
 
 - Joint networks:
-# For ensembling network-based features. An edge is defined between two genes if it is existed in more than half of all the networks.
-# There are 8 networks in total: 'co_expression','DO', 'GObp','GOcc', 'GOmf', 'HPO','PPI', and 'pubmed'. 
+For ensembling network-based features. An edge is defined between two genes if it is existed in more than half of all the networks.
+There are 8 networks in total: 'co_expression','DO', 'GObp','GOcc', 'GOmf', 'HPO','PPI', and 'pubmed'. 
 python gene_interaction_joint.py
 
 - Running all these python programs result in gene-gene networks stored as gene_interaction/
 
 3. Running network-based feature ranking for these networks by:
 geneRank.m
-# The score for genes returned by running geneRank.m is stored at /gene_interaction/score/. We convert the score to index for genes by running
+
+The score for genes returned by running geneRank.m is stored at /gene_interaction/score/. We convert the score to index for genes by running
 python score_2_index.py
-# The ranking of genes returned by running score_2_index.py will be stored at the folder of feat_ranking/
+
+The ranking of genes returned by running score_2_index.py will be stored at the folder of feat_ranking/
 
 4. Now we have feature ranking for both conventional and network-based methods. 
 python classify.py
-# The result for all these feature selections returned by running classify.py will be stored in result.csv.
+
+The result for all these feature selections returned by running classify.py will be stored in result.csv.
 
