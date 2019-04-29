@@ -12,7 +12,7 @@ A. Resources:
 + gene_embedding.py: create word, hence gene name included, embedding, used as input for gene_interaction_pubmed.py
 + geneRank.m: score genes based on their networks: co-expression, pathway, PPI, and pubmed-embedding networks
 + score_2_index.py: turn the score returned by geneRank.m into the index of genes in the datasets. 
-+ python classify.py: running the classification task with the features ranked highest by the above methods, be it conventional or network-based.
++ classify.py: running the classification task with the features ranked highest by the above methods, be it conventional or network-based.
 
 - folder pubmed/: 
 + pubmed.txt (unzip pubmed.7z): contain PubMed raw text as input to learn word/gene embeddings.
