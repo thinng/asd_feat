@@ -10,7 +10,6 @@ A. Resources:
 + gene_interaction_PPI.py: create PPI networks.
 + gene_interaction_pubmed.py: create pubmed-embedding networks.
 + gene_embedding.py: create word, hence gene name included, embedding, used as input for gene_interaction_pubmed.py
-+ gene_interaction_joint.py: create a ensembling network where an edge is defined between two genes if it is existed in more than half of all the 8 networks ('co_expression','DO', 'GObp','GOcc', 'GOmf', 'HPO','PPI', and 'pubmed').
 + geneRank.m: score genes based on their networks: co-expression, pathway, PPI, and pubmed-embedding networks
 + score_2_index.py: turn the score returned by geneRank.m into the index of genes in the datasets. 
 + python classify.py: running the classification task with the features ranked highest by the above methods, be it conventional or network-based.
@@ -64,9 +63,6 @@ For learning gene-gene interactions from PubMed, first the embedding for genes s
 
 Raw data extracted from PubMed is stored at /pubmed/pubmed.txt. The embbed model is stored at pubmed/gene_embedding.embed.
 Then the network is learned through: python gene_interaction_pubmed.py
-
-- Joint networks:
-For ensembling network-based features. An edge is defined between two genes if it is existed in more than half of all the 8 networks ('co_expression','DO', 'GObp','GOcc', 'GOmf', 'HPO','PPI', and 'pubmed'): python gene_interaction_joint.py
 
 - Running all these python programs result in gene-gene networks stored as gene_interaction/
 
