@@ -23,7 +23,7 @@ X_train = df.as_matrix()
 
 sel = ['chi_square','cmim', 'f_score','fisher_score','gini_index','icap',
        'jmi','ll_l21','ls_l21','reliefF','rfs','trace_ratio', 'SFARI','AUC'] [int(sys.argv[1])]
-print('feature selection method:', sel)
+print('running feature selection method:', sel)
 if sel=='chi_square':
     score = chi_square.chi_square(X_train, y_train)
     idx = chi_square.feature_ranking(score)

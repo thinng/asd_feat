@@ -34,6 +34,8 @@ This will be the input for classify.py, telling which features to be used in the
 
 # Step-by-step running:
 
+Please unzip all *.7z files required before running any algorithms.
+
 ## 0. Installing Python libaries needed for 
 - conventional feature selections:
 ```sh
@@ -49,8 +51,6 @@ pip install gensim
 python conventional_feature_ranking.py index
 ```
 where index is in the range of the list of conventional methods ['chi_square','cmim', 'f_score','fisher_score','gini_index','icap','jmi','ll_l21','ls_l21','reliefF','rfs','trace_ratio', 'SFARI','AUC']
-The material for SFARI is stored at /home/thinng/code/2019/bib/mapping/SFARI-Gene_genes_export09-06-2018.csv, 
-downloaded from https://gene.sfari.org//wp-content/themes/sfari-gene/utilities/download-csv.php?api-endpoint=genes
 The ranking of genes will be stored at the folder of feat_ranking/
 
 ## 2. Building gene-gene networks:
