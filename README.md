@@ -34,7 +34,7 @@ This will be the input for classify.py, telling which features to be used in the
 
 # Step-by-step running:
 
-Please unzip all *.7z files required before running any algorithms.
+Please unzip all *.7z files required before running any algorithms. Please note that some may take hours to run.
 
 ## 0. Installing Python libaries needed for 
 - conventional feature selections:
