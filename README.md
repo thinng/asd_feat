@@ -50,7 +50,7 @@ pip install gensim
 ```sh
 python conventional_feature_ranking.py index
 ```
-where index is in the range of the list of conventional methods ['chi_square','cmim', 'f_score','fisher_score','gini_index','icap','jmi','ll_l21','ls_l21','reliefF','rfs','trace_ratio', 'SFARI','AUC']
+where index is in the range of the list of conventional methods ['chi_square', 'cmim',  'f_score', 'fisher_score', 'gini_index', 'icap', 'jmi', 'll_l21', 'ls_l21', 'reliefF', 'rfs', 'trace_ratio', 'SFARI', 'AUC']
 The ranking of genes will be stored at the folder of feat_ranking/
 
 ## 2. Building gene-gene networks:
